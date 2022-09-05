@@ -1,18 +1,20 @@
 # Trackgenix
 The company GigaTech Software Solutions SA requested this project, which is a web system in which the hours worked by each employee in each project and in each work team can be registered.
+
 ## Requirements
 ```
-Visual Studio Code
+Visual Studio Code (VSC)
 Google Chrome
 ```
+
 ## Implementation
-Open the index.html file:
-```
-file:///C:/Users/USER/Desktop/BaSP-A2022-Etapa-1/Semana-01/index.html
-```
+Open the index.html file or install the Live Server extension in VSC.
+
 ## Structure
 - HTML
-## Contributions
+- CSS
+
+## How to contribute
 1. **Fork** the repo on GitHub
 2. **Clone** the project to your own machine
 3. **Commit** changes to your own branch

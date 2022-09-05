@@ -25,17 +25,17 @@ main, footer {
 
 /* Different sections classes */
 
-.tablet-only{
+.tablet-only {
     display: none;
 }
 
 .subtitle {
     width: fit-content;
+    padding-bottom: 13px;
+    border-bottom: solid #AACE9B 3px;
     font-weight: 700;
     font-size: 32px;
     line-height: 38px;
-    padding-bottom: 13px;
-    border-bottom: solid #AACE9B 3px;
 }
 
 /* HEADER */
@@ -44,36 +44,37 @@ header {
     position: fixed;
     width: 100vw;
     height: 126px;
-    left: 0px;
     top: 0px;
+    left: 0px;
     background: #AACE9B;
     z-index: 1;
 }
 
 #menu-btn {
     position: relative;
-    top: 28px;
-    left: 46px;
     width: 45px;
     height: 70px;
+    top: 28px;
+    left: 46px;
 }
+
 #search-img {
     position: absolute;
-    top: 54px;
     width: 20px;
     height: 20px;
     margin-left: -175px;
+    top: 54px;
     left: 50%;
     z-index: 2;
 }
 
-header > input{
+header > input {
     position: absolute;
     width: 377px;
     height: 36px;
     margin-left: -188.5px;
-    left: 50%;
     top: 45px;
+    left: 50%;
     background: #D8E7EB;
     border: 1px solid #D6D6D6;
     border-radius: 50px;
@@ -108,9 +109,9 @@ h1 {
 }
 
 #banner > div > button {
-    margin-top: 36px;
     width: 166px;
     height: 72px;
+    margin-top: 36px;
     background-color: white;
     border: 3px solid #AACE9B;
     border-radius: 5px;
@@ -125,8 +126,8 @@ h1 {
     position: absolute;
     width: 458px;
     height: 449px;
-    left: 1019px;
     top: 191px;
+    left: 1019px;
 }
 
 /* FEATURES */
@@ -134,7 +135,6 @@ h1 {
 #features {
     margin-top: 230px;
     margin-left: 12px;
-    position: relative;
 }
 
 #feature-icons {
@@ -147,7 +147,6 @@ h1 {
 
 .feature-icon {
     display: inline-block;
-    position: relative;
     height: 88.91px;
 }
 
@@ -193,9 +192,9 @@ h1 {
     list-style-image: url(../../assets/icons/list-style-arrow.svg);
 }
 
-#reasons-why > ul > li {
-    padding-left: 31.13px;
+#reasons-why li {
     margin-bottom: 42px;
+    padding-left: 31.13px;
 }
 
 /* FORM */
@@ -210,11 +209,8 @@ h1 {
 
 .form-children {
     display: block;
-    margin-bottom: 30px;
-}
-
-.form-children {
     width: 659px;
+    margin-bottom: 30px;
     padding: 10px 12px 10px 12px;
     border: 2px solid #AACE9B;
     border-radius: 4px;
@@ -224,7 +220,7 @@ h1 {
     color: #C4C4C4;
 }
 
-#form > form > textarea {
+#form textarea {
     height: 203px;
 }
 
@@ -233,30 +229,30 @@ h1 {
 }
 
 .form-btn {
-    height: 50px;
     width: 135px;
+    height: 50px;
     padding: 14px 36px 14px 36px;
     border-radius: 5px;
 }
 
 .form-btn-cancel {
-    background: #FFFFFF;
     margin-left: 369px;
+    background: #FFFFFF;
+    border: 3px solid #AACE9B;
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
     color: #AACE9B;
-    border: 3px solid #AACE9B;
 }
 
 .form-btn-submit {
-    background: #AACE9B;
     margin-left: 20px;
+    background: #AACE9B;
+    border: none;
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
     color: #FFFFFF;
-    border: none;
 }
 
 /* HISTORY */
@@ -278,20 +274,22 @@ h1 {
     left: 596px;
 }
 
+/* FINAL SECCION */
+
 #final-section {
     margin: 163px 0 94.98px 0;
-}
-
-#final-section h4 {
-    margin-bottom: 30px;
-    font-weight: 700;
-    text-transform: uppercase;
 }
 
 #final-section > div {
     display: inline-block;
     width: 216px;
     height: 198px;
+}
+
+#final-section h4 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 #products {
@@ -309,7 +307,77 @@ h1 {
     margin-left: 42px;
 }
 
+/* SIDEBAR */
+
+#sidebar {
+    position: fixed;
+    width: 26.2566138%;
+    height: 100vh;
+    padding-top: 80px;
+    top: 126px;
+    left: 0;
+    background-color: #FFFFFF;
+    border-right: 3px solid #BFBFBF;
+    z-index: 1;
+}
+
+.sidebar-title {
+    width: 100px;
+    margin-left: 55px;
+    padding-bottom: 32.5px;
+    border-bottom: 3px #AACE9B solid;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+#sidebar nav {
+    margin-top: 30.5px;
+}
+
+#sidebar nav li {
+    height: 117px;
+    width: 100%;
+    padding: 36px 0 36px 55px;
+    border-bottom: 1px solid #CDCCCC;
+    font-size: 30px;
+    line-height: 35px;
+}
+
+#sidebar-contact {
+    margin-top: 36px;
+}
+
+#sidebar-contact > div {
+    margin-top: 29px;
+}
+
+#sidebar-contact > div > div {
+    position: relative;
+    margin: 16px 0 16px 55px;
+}
+
+#sidebar-contact img {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    top: 0;
+}
+
+#sidebar-contact a {
+    display: inline-block;
+    width: 264px;
+    margin-left: 58px;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+#email {
+    text-decoration: underline
+}
+
 /* FOOTER */
+
 footer {
     position: relative;
     margin-top: 56.02px;
@@ -318,9 +386,9 @@ footer {
 
 footer ul {
     position: absolute;
-    left: 50%;
     width: 270px;
     margin-left: -132.5px;
+    left: 50%;
 }
 
 footer li {
@@ -342,69 +410,4 @@ footer p {
     font-size: 24px;
     line-height: 28px;
 }
-/* SIDEBAR */
 
-#sidebar {
-    position: fixed;
-    top: 126px;
-    left: 0;
-    width: 26.2566138%;
-    height: 100vh;
-    padding-top: 80px;
-    border-right: 3px solid #BFBFBF;
-}
-
-.sidebar-title {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;
-    margin-left: 55px;
-    padding-bottom: 32.5px;
-    border-bottom: 3px #AACE9B solid;
-    width: 100px;
-}
-
-#menu-list-sidebar {
-    margin-top: 30.5px;
-}
-
-#menu-list-sidebar > li {
-    height: 117px;
-    width: 100%;
-    padding: 36px 0 36px 55px;
-    font-size: 30px;
-    line-height: 35px;
-    border-bottom: 1px solid #CDCCCC;
-}
-
-#sidebar-contact {
-    margin-top: 36px;
-}
-
-#sidebar-contact-info {
-    margin-top: 29px;
-}
-
-#sidebar-contact-info > div {
-    position: relative;
-    margin: 16px 0 16px 55px;
-}
-
-#sidebar-contact-info > div > img {
-    position: absolute;
-    top: 0;
-    width: 29px;
-    height: 29px;
-}
-
-#sidebar-contact-info > div > a {
-    display: inline-block;
-    margin-left: 58px;
-    width: 264px;
-    font-size: 25px;
-    line-height: 29px;
-}
-
-#email {
-    text-decoration: underline
-}
