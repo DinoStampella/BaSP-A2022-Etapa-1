@@ -1,0 +1,18 @@
+#history > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#history > div > div {
+    /* max-width: 450px; */
+    margin: 5.9vw 0 3.8vw;
+}
+
+#history  img {
+    /* max-width: 450px; */
+    padding: 0 5.89vw;
+    flex-shrink: 0;
+    flex-grow: 1;
+}

@@ -1,0 +1,49 @@
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 10vw;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 10.25vw;
+    line-height: 11.79vw;
+    text-transform: uppercase;
+}
+
+#banner h2 {
+    margin-top: 1.28vw;
+    font-weight: 700;
+    font-size: 3.58vw;
+    line-height: 4.1vw;
+    color: #AACE9B;
+}
+
+#banner img {
+    width: 40%;
+    margin: 1.28vw 0;
+}
+
+#banner p {
+    width: 80%;
+}
+
+#banner  button {
+    display: none;
+    width: 166px;
+    height: 72px;
+    margin-top: 36px;
+    background-color: white;
+    border: 3px solid #AACE9B;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #AACE9B;
+}
+

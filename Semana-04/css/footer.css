@@ -1,0 +1,25 @@
+footer {
+    margin-top: 3.84vw;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+}
+
+footer img {
+    width: 3.8vw;
+    height: 3.8vw;
+    margin: 0 1.15vw;
+    filter: invert(41%) sepia(0%) saturate(0%) hue-rotate(155deg) brightness(98%) contrast(92%)
+}
+
+footer > div {
+    padding: 1.8vw 0;
+}
+
+footer p {
+    font-size: 3vw;
+    line-height: 3.5vw;
+}

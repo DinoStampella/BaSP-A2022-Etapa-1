@@ -1,0 +1,51 @@
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7.5vw;
+    background: #AACE9B;
+    z-index: 1;
+}
+
+header > img {
+    width: 2.56vw;
+    margin-left: 2.56vw;
+}
+
+header div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 38.46vw;
+    height: 3.84vw;
+    margin: 0 auto;
+}
+
+#search-img {
+    position: absolute;
+    height: 60%;
+    margin-left: 1.28vw;
+    z-index: 2;
+}
+
+header  input {
+    width: 100%;
+    height: 100%;
+    background: #FAFBFD;
+    border: 1px solid #AACE9B;
+    border-radius: 50px;
+} 
+
+@media (min-width: 1512px) {
+
+    header {
+        height: 8.33vw;
+    }
+
+    header div {
+        width: 24.93vw;
+        height: 2.38vw;
+    }
+}

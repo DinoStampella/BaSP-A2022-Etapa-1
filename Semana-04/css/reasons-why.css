@@ -1,0 +1,28 @@
+#reasons-why > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 105%;
+    margin: 3.6vw 0 0 -2vw;
+}
+
+#reasons-why > div > img {
+    flex-grow: 1;
+}
+
+#reasons-why li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5.12vw;
+    padding-left: 2.3vw;
+    font-weight: 700;
+} 
+
+#reasons-why li img {
+    width: 1.56vw;
+    margin-right: 2.3vw;
+}
+
+#reasons-why li:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,52 @@
+#form form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3.85vw;
+} 
+
+.form-children {
+    width: 90%;
+    margin-bottom: 2.56vw;
+    padding: 2.3vw 3.07vw;
+    border: 0.25vw solid #AACE9B;
+    border-radius: 5px;
+    color: #C4C4C4;
+}
+
+textarea {
+    height: 24.87vw;
+}
+
+.form-children::placeholder {
+    color: #C4C4C4;
+}
+
+.form-children:last-child {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0;
+    border: transparent;
+}
+
+.form-btn {
+    width: 21.79vw;
+    height: 100%;
+    padding: 2.56vw  6.15vw;
+    border-radius: 5px;
+} 
+
+.form-btn-cancel {
+    margin-right: 3.85vw;
+    background: #FFFFFF;
+    border: .25vw solid #AACE9B;
+    font-weight: 700;
+    color: #AACE9B;
+}
+
+.form-btn-submit {
+    background: #AACE9B;
+    border: none;
+    font-weight: 700;
+    color: #FFFFFF;
+}
