@@ -1,20 +1,20 @@
 #form form {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 3.85vw;
+    margin-top: 15px;
 } 
 
 .form-children {
     width: 90%;
-    margin-bottom: 2.56vw;
-    padding: 2.3vw 3.07vw;
-    border: 0.25vw solid #AACE9B;
+    margin-bottom: 10px;
+    padding: 9px 12px;
+    border: 1px solid #AACE9B;
     border-radius: 5px;
     color: #C4C4C4;
 }
 
 textarea {
-    height: 24.87vw;
+    height: 97px;
 }
 
 .form-children::placeholder {
@@ -31,15 +31,14 @@ textarea {
 
 .form-btn {
     width: 21.79vw;
-    height: 100%;
-    padding: 2.56vw  6.15vw;
+    padding: 10px 0;
     border-radius: 5px;
 } 
 
 .form-btn-cancel {
-    margin-right: 3.85vw;
+    margin-right: 15px;
     background: #FFFFFF;
-    border: .25vw solid #AACE9B;
+    border: 1px solid #AACE9B;
     font-weight: 700;
     color: #AACE9B;
 }

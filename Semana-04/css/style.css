@@ -3,15 +3,10 @@
 * {
     box-sizing: border-box;
     font-weight: 400;
-    font-size: 3.07vw;
-    line-height: 3.58vw;
+    font-size: .75rem;
+    line-height: .875rem;
     text-decoration: none;
     color: #373867;
-}
-
-html {
-    font-size: 12px;
-    line-height: 14px;
 }
 
 body {
@@ -26,22 +21,22 @@ main {
 
 .container {
     width: 85%;
-    margin: 7.69vw auto 0;
+    margin: 30px auto 0;
 }
 
 .subtitle {
     width: fit-content;
-    padding: 0 0 1.28vw;
-    border-bottom: solid #AACE9B .51vw;
+    padding: 0 0 5px;
+    border-bottom: solid #AACE9B 2px;
     font-weight: 700;
-    font-size: 3.58vw;
-    line-height: 4.1vw;
+    font-size: .875rem;
+    line-height: 1rem;
 }
 
 
 @media (min-width: 1512px) {
     
     main, footer { 
-        margin-left: 26.2566138vw;
+        margin-left: 26.25%;
     }
 }

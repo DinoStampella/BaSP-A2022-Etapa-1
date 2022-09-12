@@ -3,11 +3,11 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 2.56vw;
+    margin-top: 10px;
 }
 
 .feature-icon:nth-child(1), .feature-icon:nth-child(2) {
-    margin-bottom: 7.7vw;
+    margin-bottom: 30px;
 }
 
 .feature-icon {
@@ -18,9 +18,9 @@
 
  .feature-icon > img {
     width: 10.25vw;
-    margin-right: 1.28vw;
+    margin-right: 5px;
     padding: 3vw;
-    border: solid .5vw #AACE9B;
+    border: solid 1px #AACE9B;
     border-radius: 5px;
 }
 

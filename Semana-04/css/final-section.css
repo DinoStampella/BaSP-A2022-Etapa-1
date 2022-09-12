@@ -1,22 +1,23 @@
 #final-section {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6.4vw;
+    margin-bottom: 24px;
 }
 
 #final-section > div {
     width: fit-content;
+    flex-grow: 1;
+    text-align: center;
 }
 
 #final-section h4 {
-    margin-bottom: 3.8vw;
+    margin-bottom: 15px;
     font-weight: 700;
     text-transform: uppercase;
 
 }
 
 #final-section > div:nth-child(2) {
-    padding: 0 7.7vw ;
     border-left: solid 2px #909090;
     border-right: solid 2px #909090;
 }

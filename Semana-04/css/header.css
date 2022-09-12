@@ -4,29 +4,29 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 7.5vw;
+    height: 30px;
     background: #AACE9B;
     z-index: 1;
 }
 
 header > img {
-    width: 2.56vw;
-    margin-left: 2.56vw;
+    width: 10px;
+    margin-left: 10px; 
 }
 
 header div {
     position: relative;
     display: flex;
     align-items: center;
-    width: 38.46vw;
-    height: 3.84vw;
+    width: 39.23%; 
+    height: 50%; 
     margin: 0 auto;
 }
 
 #search-img {
     position: absolute;
-    height: 60%;
-    margin-left: 1.28vw;
+    height: 60%; 
+    margin-left: 5px; 
     z-index: 2;
 }
 
@@ -41,11 +41,15 @@ header  input {
 @media (min-width: 1512px) {
 
     header {
-        height: 8.33vw;
+        height: 126px;
+    }
+
+    header > img {
+        display: none;
     }
 
     header div {
-        width: 24.93vw;
-        height: 2.38vw;
+        width: 24.93%;
+        height: 28.57%;
     }
 }

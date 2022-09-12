@@ -1,5 +1,5 @@
 footer {
-    margin-top: 3.84vw;
+    margin-top: 15px;
     text-align: center;
 }
 
@@ -11,15 +11,15 @@ footer ul {
 footer img {
     width: 3.8vw;
     height: 3.8vw;
-    margin: 0 1.15vw;
+    margin: 0 5px;
     filter: invert(41%) sepia(0%) saturate(0%) hue-rotate(155deg) brightness(98%) contrast(92%)
 }
 
 footer > div {
-    padding: 1.8vw 0;
+    padding: 7px 0;
 }
 
 footer p {
-    font-size: 3vw;
-    line-height: 3.5vw;
+    font-size: .75rem;
+    line-height: .875rem;
 }

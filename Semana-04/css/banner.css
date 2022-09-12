@@ -4,28 +4,28 @@
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    padding-top: 10vw;
+    padding-top: 35px; /**/
     text-align: center;
 }
 
 h1 {
     font-weight: 700;
-    font-size: 10.25vw;
-    line-height: 11.79vw;
+    font-size: 2.5rem; /**/
+    line-height: 2.93rem; /**/
     text-transform: uppercase;
 }
 
 #banner h2 {
-    margin-top: 1.28vw;
+    margin-top: 5px;
     font-weight: 700;
-    font-size: 3.58vw;
-    line-height: 4.1vw;
+    font-size: .875rem;
+    line-height: 1rem;
     color: #AACE9B;
 }
 
 #banner img {
     width: 40%;
-    margin: 1.28vw 0;
+    margin: 5px 0;
 }
 
 #banner p {
