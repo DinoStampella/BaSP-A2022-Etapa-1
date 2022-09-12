@@ -14,6 +14,14 @@ Open the index.html file or install the Live Server extension in VSC.
 - HTML
 - CSS
 
+## Our work
+| **Week** 	| **Tasks**                                                                                                                                                                 	|
+|:--------:	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+|    01    	| Make a screenflow of the whole web system in Figma                                                                                                                        	|
+|    02    	| Create an HTML document that has the same content as the landing of the screenflow of the first week, using the version for desktop devices                               	|
+|    03    	| Include the appropriate styles to the HTML structure of week 02 so that when viewing the page, it looks like the landing of the first week screenflow.                    	|
+|    04    	| Replicate the landing page of the screenflow of the first week using Flexbox as the main tool for the creation of a Responsive Design following the Mobile First concept. 	|
+
 ## How to contribute
 1. **Fork** the repo on GitHub
 2. **Clone** the project to your own machine
