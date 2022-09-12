@@ -5,15 +5,25 @@
     flex-wrap: wrap;
 }
 
-#history > div > div{
-    /* max-width: 450px; */
+#history > div > div {
     margin: 20px 0 ;
     text-align: justify;
 }
 
 #history  img {
-    /* max-width: 450px; */
+    max-width: 318px;
     padding: 0 23px;
     flex-shrink: 0;
     flex-grow: 1;
+}
+
+@media (min-width: 834px) {
+
+    #history > div > div {
+        text-align: center;
+    }
+
+    #history > div > div > p:nth-child(4) {
+        display: none;
+    }
 }

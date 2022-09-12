@@ -33,6 +33,25 @@ main {
     line-height: 1rem;
 }
 
+/* Medias */ 
+
+@media (min-width: 834px) {
+
+    * {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+
+    .container {
+        margin-top: 67px;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        line-height: 2.344rem;
+        border-bottom-width: 3px;
+    }
+}
 
 @media (min-width: 1512px) {
     

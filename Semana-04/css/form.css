@@ -49,3 +49,24 @@ textarea {
     font-weight: 700;
     color: #FFFFFF;
 }
+
+@media (min-width: 834px) {
+
+    #form form {
+        margin-top: 15px;
+    } 
+
+    .form-children {
+        width: 100%;
+        margin-bottom: 30px;
+        border-width: 2px;
+    }
+
+    textarea {
+        height: 203px;
+    }
+
+    .form-btn {
+        padding: 16px 0;
+    } 
+}

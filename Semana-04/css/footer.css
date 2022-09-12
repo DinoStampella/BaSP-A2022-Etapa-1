@@ -23,3 +23,25 @@ footer p {
     font-size: .75rem;
     line-height: .875rem;
 }
+
+@media (min-width: 834px) {
+
+    footer {
+        margin-top: 56.02px;
+    }
+
+    footer img {
+        width: 3.59vw;
+        height: 3.59vw;
+        margin: 0 7px;
+    }
+
+    footer > div {
+        padding: 40px 0;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+}
