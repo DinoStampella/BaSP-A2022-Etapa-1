@@ -70,3 +70,17 @@ textarea {
         padding: 16px 0;
     } 
 }
+
+@media (min-width: 1512px) {
+
+    .form-children, .form-children:last-child {
+        width: 59.1%;
+    }
+
+    .form-btn {
+        width: 8.92vw;
+        padding: 16px 0;
+        font-size: 0.938rem;
+        line-height: 1.125rem;
+    }
+}

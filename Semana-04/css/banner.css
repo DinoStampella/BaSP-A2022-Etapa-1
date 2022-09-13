@@ -32,7 +32,7 @@ h1 {
     width: 80%;
 }
 
-#banner  button {
+#banner button {
     display: none;
     width: 166px;
     height: 72px;
@@ -67,5 +67,43 @@ h1 {
     #banner img {
         width: 23.5vw;
         margin: 13px 0;
+    }
+}
+
+@media (min-width: 1512px) {
+
+    #banner {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 550px;
+    }
+
+    h1 {
+        font-size: 3rem; 
+        line-height: 3.516rem;
+        letter-spacing: 0.3em;
+    }
+
+    #banner h2 {
+        margin: 36px 0;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        text-transform: uppercase;
+    }
+
+    #banner img {
+        order: 2;
+        width: 30.29vw;
+        margin: 0;
+    }
+
+    #banner button {
+        display: block;
+        align-self: flex-start;
+    }
+
+    h1, #banner h2, #banner p {
+        text-align: start;
+        width: 55%;
     }
 }

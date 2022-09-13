@@ -43,3 +43,11 @@
         border-width: 2px;
     }
 }
+
+@media (min-width: 1512px) {
+
+    .feature-icon > img {
+        width: 6.06vw;
+        padding: 1.77vw;
+    }
+}

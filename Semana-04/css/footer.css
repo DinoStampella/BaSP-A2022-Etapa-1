@@ -45,3 +45,12 @@ footer p {
         line-height: 1.75rem;
     }
 }
+
+@media (min-width: 1512px) {
+
+    footer img {
+        width: 1.98vw;
+        height: 1.98vw;
+        margin: 0 10px;
+    }
+}

@@ -54,6 +54,11 @@ main {
 }
 
 @media (min-width: 1512px) {
+
+    .container {
+        width: 95%;
+        margin-top: 120px;
+    }
     
     main, footer { 
         margin-left: 26.25%;

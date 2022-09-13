@@ -5,9 +5,9 @@
 }
 
 #final-section > div {
-    width: fit-content;
     flex-grow: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 #final-section h4 {
@@ -21,3 +21,5 @@
     border-left: solid 2px #909090;
     border-right: solid 2px #909090;
 }
+
+

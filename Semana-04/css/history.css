@@ -11,7 +11,7 @@
 }
 
 #history  img {
-    max-width: 318px;
+    max-width: 456px;
     padding: 0 23px;
     flex-shrink: 0;
     flex-grow: 1;
@@ -25,5 +25,23 @@
 
     #history > div > div > p:nth-child(4) {
         display: none;
+    }
+}
+
+@media (min-width: 1512px) {
+
+    #history > div {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    #history  img {
+        min-width: 456px;
+        margin: 0 auto;
+    }
+
+    #history > div > div {
+        margin: 34px 40px 34px 0 ;
+        text-align: start;
     }
 }
