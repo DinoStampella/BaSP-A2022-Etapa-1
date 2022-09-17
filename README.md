@@ -21,6 +21,7 @@ Open the index.html file or install the Live Server extension in VSC.
 |    02    	| Create an HTML document that has the same content as the landing of the screenflow of the first week, using the version for desktop devices                               	|
 |    03    	| Include the appropriate styles to the HTML structure of week 02 so that when viewing the page, it looks like the landing of the first week screenflow.                    	|
 |    04    	| Replicate the landing page of the screenflow of the first week using Flexbox as the main tool for the creation of a Responsive Design following the Mobile First concept. 	|
+|    05    	| Improve what was delivered in the previous week and do JavaScript exercises. 	|
 
 ## How to contribute
 1. **Fork** the repo on GitHub
