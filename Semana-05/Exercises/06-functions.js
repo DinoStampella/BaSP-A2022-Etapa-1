@@ -4,11 +4,13 @@ console.log('EXERCISE 6: FUNTIONS');
 
 console.log('Exercise 6.a:');
 
-function suma(a,b) {
+function suma1(a, b) {
+
     return (a + b);
+
 };
 
-var sumar = suma(1,1);
+var sumar = suma1(1, 1); // return 2
 
 console.log(sumar);
 
@@ -16,17 +18,29 @@ console.log(sumar);
 
 console.log('Exercise 6.b:');
 
-function suma(a,b) {
-    if (isNaN(a) || isNaN(b)) {
-        alert('Al menos uno de los parametros tiene un error');
-        return NaN
+function validateNaN(num) {
+
+    return typeof num === 'number' 
+
     }
 
+function suma2(a, b) {
+
+    if (!validateNaN(a)) {
+        alert('Error! At least one of the parameters is NaN');
+        return NaN
+    };
+    if (!validateNaN(b)) {
+        alert('Error! At least one of the parameters is NaN');
+        return NaN
+    };
     return (a + b);
     
 };
 
-console.log(suma(1,'uno'));
+console.log(suma2(1, 1)); // return 2
+console.log(suma2(1, '1')); // Alert and return NaN 
+console.log(suma2(1, 'uno')); // Alert and return NaN 
 
 //Aparte, crear una función validate Integer que reciba un número como parámetro y devuelva verdadero si es un número entero.
 
@@ -36,32 +50,69 @@ function validateIntenger(num) {
     
     return Number.isInteger(num);
 
-}
+};
 
-console.log(validateIntenger(1))
+console.log(validateIntenger(1)); // return true
+console.log(validateIntenger(1.5)); // return false
 
 //A la función suma del ejercicio 6b) agregarle una llamada a la función del ejercicio 6c. y que valide que los números sean enteros. En caso que haya decimales mostrar un alerta con el error y retornar el número convertido a entero (redondeado).
 
 console.log('Exercise 6.d:');
+ 
+function suma3(a,b) {
 
-function suma(a,b,validate) {
-    if (isNaN(a) || isNaN(b)) {
-        alert('Al menos uno de los parametros tiene un error');
+    if (!validateNaN(a)) {
+        alert('Error! At least one of the parameters is NaN');
         return NaN
-    }
-    if (!validate(a)) {
+    };
+    if (!validateNaN(b)) {
+        alert('Error! At least one of the parameters is NaN');
+        return NaN
+    };
+    if (!validateIntenger(a)) {
         alert('Error! At least one number is not an integer.');
         return Math.round(a);
-    } 
-    if (!validate(b)) {
+    };
+    if (!validateIntenger(b)) {
         alert('Error! At least one number is not an integer.');
         return Math.round(b);
-    }  
+    };
     return (a + b);
+
 };
 
-console.log(suma(2,2,validateIntenger))
+console.log(suma3(1, 2)); // return 3
+console.log(suma3(0.6, 2)); // Alert and return 1 (Math.round of the first parameter) 
+console.log(suma3(1, '2')); // Alert and return NaN 
 
-//Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga funcionando igual.
+// //Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga funcionando igual.
 
 console.log('Exercise 6.e:');
+
+function fullValidate(num){
+    
+    if (!validateNaN(num)) {
+        alert('Error! At least one of the parameters is NaN');
+        return NaN
+    };
+    if (!validateIntenger(num)) {
+        alert('Error! At least one number is not an integer.');
+        return false;
+    };
+    return true
+}
+
+function suma4(a, b) {
+
+    if (!fullValidate(a)) {
+        return false;
+    };
+    if (!fullValidate(b)) {
+        return false;
+    };
+    return (a + b)
+}
+
+console.log(suma4(1, 2)) // return 3
+console.log(suma4(1, 2.5)) // Alert and return false 
+console.log(suma4(1, '2')) // Alert and return false 
