@@ -5,9 +5,7 @@ console.log('EXERCISE 6: FUNTIONS');
 console.log('Exercise 6.a:');
 
 function suma1(a, b) {
-
     return (a + b);
-
 };
 
 var sumar = suma1(1, 1); // return 2
@@ -20,7 +18,7 @@ console.log('Exercise 6.b:');
 
 function validateNaN(num) {
 
-    return typeof num === 'number' 
+    return typeof num === 'number'; 
 
     }
 
@@ -28,11 +26,11 @@ function suma2(a, b) {
 
     if (!validateNaN(a)) {
         alert('Error! At least one of the parameters is NaN');
-        return NaN
+        return NaN;
     };
     if (!validateNaN(b)) {
         alert('Error! At least one of the parameters is NaN');
-        return NaN
+        return NaN;
     };
     return (a + b);
     
@@ -61,13 +59,9 @@ console.log('Exercise 6.d:');
  
 function suma3(a,b) {
 
-    if (!validateNaN(a)) {
+    if (!validateNaN(a) || !validateNaN(b)) {
         alert('Error! At least one of the parameters is NaN');
-        return NaN
-    };
-    if (!validateNaN(b)) {
-        alert('Error! At least one of the parameters is NaN');
-        return NaN
+        return NaN;
     };
     if (!validateIntenger(a)) {
         alert('Error! At least one number is not an integer.');
@@ -89,30 +83,22 @@ console.log(suma3(1, '2')); // Alert and return NaN
 
 console.log('Exercise 6.e:');
 
-function fullValidate(num){
+function fullValidate(num) {
     
-    if (!validateNaN(num)) {
-        alert('Error! At least one of the parameters is NaN');
-        return NaN
-    };
-    if (!validateIntenger(num)) {
-        alert('Error! At least one number is not an integer.');
+    if (!validateNaN(num) || !validateIntenger(num)) {
         return false;
     };
-    return true
+    return true;
 }
 
 function suma4(a, b) {
 
-    if (!fullValidate(a)) {
+    if (!fullValidate(a) || !fullValidate(b)) {
         return false;
     };
-    if (!fullValidate(b)) {
-        return false;
-    };
-    return (a + b)
+    return (a + b);
 }
 
-console.log(suma4(1, 2)) // return 3
-console.log(suma4(1, 2.5)) // Alert and return false 
-console.log(suma4(1, '2')) // Alert and return false 
+console.log(suma4(1, 2)); // return 3
+console.log(suma4(1, 2.5)); // Alert and return false 
+console.log(suma4(1, '2')); // Alert and return false 
