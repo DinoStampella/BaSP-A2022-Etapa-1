@@ -79,15 +79,20 @@ console.log(suma3(1, 2)); // return 3
 console.log(suma3(0.6, 2)); // Alert and return 1 (Math.round of the first parameter) 
 console.log(suma3(1, '2')); // Alert and return NaN 
 
-// //Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga funcionando igual.
+//Convertir la validación del ejercicio 6d) en una función separada y llamarla dentro de la función suma probando que todo siga funcionando igual.
 
 console.log('Exercise 6.e:');
 
 function fullValidate(num) {
     
-    if (!validateNaN(num) || !validateIntenger(num)) {
-        return false;
+    if (!validateNaN(num)) {
+        alert('Error! At least one of the parameters is NaN');
+        return NaN;
     };
+    if (!validateIntenger(num)) {
+        alert('Error! At least one number is not an integer.');
+        return false
+    }
     return true;
 }
 
