@@ -1,0 +1,25 @@
+#final-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+#final-section > div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#final-section h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+#final-section > div:nth-child(2) {
+    border-left: solid 2px #909090;
+    border-right: solid 2px #909090;
+}
+
+
