@@ -15,6 +15,7 @@ body {
 
 main {
     border-bottom: solid 3px #AACE9B;
+    padding-top: 35px; 
 }
 
 /* Different sections classes */
@@ -42,6 +43,10 @@ main {
         line-height: 1.75rem;
     }
 
+    main {
+        padding-top: 102px;
+    }
+    
     .container {
         margin-top: 67px;
     }
@@ -55,12 +60,17 @@ main {
 
 @media (min-width: 1512px) {
 
+    main {
+        padding-top: 154px;
+    }
+
+    main, footer { 
+        margin-left: 26.25%;
+    }
+
     .container {
         width: 95%;
         margin-top: 120px;
     }
     
-    main, footer { 
-        margin-left: 26.25%;
-    }
 }
