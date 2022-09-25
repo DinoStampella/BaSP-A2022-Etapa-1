@@ -14,8 +14,9 @@ body {
 }
 
 main {
-    border-bottom: solid 3px #AACE9B;
-    padding-top: 35px; 
+    min-height: calc(100vh - 90px);
+    padding-top: 30px; 
+    border-bottom: solid 3px #AACE9B; 
 }
 
 /* Different sections classes */
@@ -44,7 +45,8 @@ main {
     }
 
     main {
-        padding-top: 102px;
+        padding-top: 92px;
+        min-height: calc(100vh - 253px);
     }
     
     .container {
@@ -61,7 +63,7 @@ main {
 @media (min-width: 1512px) {
 
     main {
-        padding-top: 154px;
+        padding-top: 126px;
     }
 
     main, footer { 

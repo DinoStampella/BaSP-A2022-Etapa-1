@@ -9,8 +9,8 @@ footer ul {
 }
 
 footer img {
-    width: 3.8vw;
-    height: 3.8vw;
+    width: 15px;
+    height: 15px;
     margin: 0 5px;
     filter: invert(41%) sepia(0%) saturate(0%) hue-rotate(155deg) brightness(98%) contrast(92%)
 }
@@ -27,12 +27,12 @@ footer p {
 @media (min-width: 834px) {
 
     footer {
-        margin-top: 56.02px;
+        margin-top: 56px;
     }
 
     footer img {
-        width: 3.59vw;
-        height: 3.59vw;
+        width: 30px;
+        height: 30px;
         margin: 0 7px;
     }
 
@@ -46,11 +46,3 @@ footer p {
     }
 }
 
-@media (min-width: 1512px) {
-
-    footer img {
-        width: 1.98vw;
-        height: 1.98vw;
-        margin: 0 10px;
-    }
-}

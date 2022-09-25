@@ -1,0 +1,124 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 122px);
+}
+
+.register-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    margin: 30px 0;
+    padding: 45px 0;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+.register-box > div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.register-box > div > a {
+    position: absolute;
+    height: 20px;
+    top: 6px;
+    left: 0;
+}
+
+.register-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2rem;
+}
+
+.register-box form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.register-box form > div, .register-box form > p, .register-box form > button {
+    width: 100%;
+}
+
+.register-box input {
+    width: 100%;
+    height: 37px;
+    margin: 7px 0;
+    padding: 10px 12px;
+    border: 1px solid #373867;
+    border-radius: 4px;
+    font-size: .875rem;
+    line-height: 1rem;
+}
+
+.register-box h4 {
+    font-weight: 500;
+    font-size: .875rem;
+    line-height: 1rem;
+}
+
+.register-box form > p {
+    text-align: center;
+    font-size: .75rem;
+    line-height: .875rem;
+}
+
+.register-box form > p:nth-child(4) {
+    margin: 20px 0 0;
+}
+
+.register-box form > p > span {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.register-btn {
+    height: 32px;
+    margin: 20px 20% 0;
+    background: #AACE9B;
+    border: transparent;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: .625rem;
+    line-height: .75rem;
+    cursor: pointer;
+}
+
+.wrong {
+    margin: -5px 0 12px 5px;
+    color: #F13312;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.green-border {
+    border-color: #008000 !important;
+}
+
+@media (min-width: 834px) {
+
+    .flex {
+        min-height: calc(100vh - 348px);
+    }
+
+    .register-box input {
+        margin: 12px 0;
+    }
+}
+
+@media (min-width: 1512px) {
+
+    .flex {
+        min-height: calc(100vh - 382px);
+    }
+}
