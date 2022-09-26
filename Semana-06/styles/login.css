@@ -82,14 +82,14 @@
 }
 
 .register-btn {
-    height: 32px;
+    height: 37px;
     margin: 20px 20% 0;
     background: #AACE9B;
     border: transparent;
     border-radius: 5px;
     font-weight: 500;
-    font-size: .625rem;
-    line-height: .75rem;
+    font-size: .875rem;
+    line-height: 1rem;
     cursor: pointer;
 }
 
