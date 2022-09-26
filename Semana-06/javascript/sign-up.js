@@ -3,12 +3,13 @@ window.addEventListener("load", function() {
     var name = document.getElementById('name');
 // Onblur: Validar si el valor solo tiene letras y si tiene mas de 3 caracteres
     name.addEventListener('blur', validateName);
-    var nameErr = ['You have not completed your name'];
+    var nameErr = ['Name Error! It has not been completed.'];
+    var nameCheck = [];
     var acceptedChars = 'abcdefghijklmnñopqrstuvwxyz ';
     var acceptedNums = '0123456789';
-    var validateMsj = [];
     function validateName() {
         nameErr = [];
+        nameCheck = [];
         var lowerCase = name.value.toLowerCase();
         if (name.value.length === 0) {
             var paragraph = document.createElement('p');
@@ -16,7 +17,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your name, please';
             name.classList.remove('green-border');
-            nameErr.push('You have not completed your name');
+            nameErr.push('Name Error! It has not been completed.');
             return false;
         };
         if (name.value.length < 4) {
@@ -25,7 +26,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your name has to have more than 3 characters';
             name.classList.remove('green-border');
-            nameErr.push('Your name does not exceed 3 characters');
+            nameErr.push('Name Error! It has to have more than 3 characters');
             return false;
         };
         var charactersAmount = 0;
@@ -42,11 +43,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'You have used non-accepted characters';
             name.classList.remove('green-border');
-            nameErr.push('You have used non-accepted characters in your name');
+            nameErr.push('Name Error! It contains non-accepted characters');
             return false;
         };
         name.classList.add('green-border');
-        validateMsj.push('Name: '+name.value);
+        nameCheck.push('Name: '+name.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -62,9 +63,11 @@ window.addEventListener("load", function() {
     var lastname = document.getElementById('lastname');
 // Onblur: Validar si el valor solo tiene letras y si tiene mas de 3 caracteres
     lastname.addEventListener('blur', validateLastname);
-    var lastnameErr = ['You have not completed your lastname'];
+    var lastnameErr = ['Lastname Error! It has not been completed.'];
+    var lastnameCheck = [];
     function validateLastname() {
         lastnameErr = [];
+        lastnameCheck = [];
         var lowerCase = lastname.value.toLowerCase();
         if (lastname.value.length === 0) {
             var paragraph = document.createElement('p');
@@ -72,7 +75,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your lastname, please';
             lastname.classList.remove('green-border');
-            lastnameErr.push('You have not completed your lastname');
+            lastnameErr.push('Lastname Error! It has not been completed.');
             return false;
         };
         if (lastname.value.length < 4) {
@@ -81,7 +84,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your lastname has to have more than 3 characters';
             lastname.classList.remove('green-border');
-            lastnameErr.push('Your lastname does not exceed 3 characters');
+            lastnameErr.push('Lastname Error! It has to have more then 3 characters');
             return false;
         };
         var charactersAmount = 0;
@@ -98,11 +101,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'You have used non-accepted characters';
             lastname.classList.remove('green-border');
-            lastnameErr.push('You have used non-accepted characters in your lastname');
+            lastnameErr.push('Lastname Error! It contains non-accepted characters');
             return false;
         };
         lastname.classList.add('green-border');
-        validateMsj.push('Lastame: '+lastname.value);
+        lastnameCheck.push('Lastame: '+lastname.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -112,16 +115,18 @@ window.addEventListener("load", function() {
     var dni = document.getElementById('dni');
 // Onblur: Validar si el valor solo tiene numeros y si tiene mas de 7 caracteres
     dni.addEventListener('blur', validateDNI);
-    var dniErr = ['You have not completed your DNI'];
+    var dniErr = ['DNI Error! It has not been completed.'];
+    var dniCheck = [];
     function validateDNI() {
         dniErr = [];
+        dniCheck = [];
         if (dni.value.length === 0) {
             var paragraph = document.createElement('p');
             dni.parentElement.appendChild(paragraph);
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your DNI, please';
             dni.classList.remove('green-border');
-            dniErr.push('You have not completed your DNI');
+            dniErr.push('DNI Error! It has not been completed.');
             return false;
         };
         if (dni.value.length < 8) {
@@ -130,7 +135,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your DNI has to have more than 7 characters';
             dni.classList.remove('green-border');
-            dniErr.push('Your DNI does not exceed 7 characters');
+            dniErr.push('DNI Error! It has to have more then 7 characters');
             return false;
         };
         var charactersAmount = 0;
@@ -145,13 +150,13 @@ window.addEventListener("load", function() {
             var paragraph = document.createElement('p');
             dni.parentElement.appendChild(paragraph);
             paragraph.classList.add('wrong');
-            paragraph.innerHTML = 'You have used non-accepted characters';
+            paragraph.innerHTML = 'You have used non-accepted characters.';
             dni.classList.remove('green-border');
-            dniErr.push('You have used non-accepted characters in your DNI');
+            dniErr.push('DNI Error! It contains non-accepted characters.');
             return false;
         };
         dni.classList.add('green-border');
-        validateMsj.push('DNI: '+dni.value);
+        dniCheck.push('DNI: '+dni.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -161,20 +166,22 @@ window.addEventListener("load", function() {
     var birthDate = document.getElementById('birth-date');
 // Formato: dd/mm/aaaa
     birthDate.addEventListener('blur', validateBirthDate);
-    var birthDateErr = ['You have not completed your Birth Date'];
+    var birthDateErr = ['Birth Date Error! It has not been completed.'];
+    var birthDateCheck = [];
     function validateBirthDate() {
         birthDateErr = [];
+        birthDateCheck = [];
         if (birthDate.value.length === 0) {
             var paragraph = document.createElement('p');
             birthDate.parentElement.appendChild(paragraph);
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your Birth Date, please';
             birthDate.classList.remove('green-border');
-            birthDateErr.push('You have not completed your Birth Date');
+            birthDateErr.push('Birth Date Error! It has not been completed.');
             return false;
         };
         birthDate.classList.add('green-border');
-        validateMsj.push('Birth Date: '+birthDate.value);
+        birthDateCheck.push('Birth Date: '+birthDate.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -184,16 +191,18 @@ window.addEventListener("load", function() {
     var tel = document.getElementById('tel');
 // Onblur: Validar si el valor solo tiene numeros y si tiene mas de 10 caracteres
     tel.addEventListener('blur', validateTel);
-    var telErr = ['You have not completed your phone number'];
+    var telErr = ['Phone number Error! It has not been completed.'];
+    var telCheck = [];
     function validateTel() {
         telErr = []; 
+        telCheck = [];
         if (tel.value.length === 0) {
             var paragraph = document.createElement('p');
             tel.parentElement.appendChild(paragraph);
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your phone number, please';
             tel.classList.remove('green-border');
-            telErr.push('You have not completed your phone number');
+            telErr.push('Phone number Error! It has not been completed.');
             return false;
         };
         var charactersAmount = 0;
@@ -210,7 +219,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'You have used non-accepted characters.';
             tel.classList.remove('green-border');
-            telErr.push('You have used non-accepted characters in your phone number.');
+            telErr.push('Phone number Error! It contains non-accepted characters.');
             return false;
         };
         if (tel.value.length !== 10) {
@@ -219,11 +228,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your phone number has to have  10 characters';
             tel.classList.remove('green-border');
-            telErr.push('Your phone number does not have 10 characters');
+            telErr.push('Phone number Error! It has to have 10 characters.');
             return false;
         };
         tel.classList.add('green-border');
-        validateMsj.push('Tel: '+tel.value);
+        telCheck.push('Tel: '+tel.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación.
@@ -233,9 +242,11 @@ window.addEventListener("load", function() {
     var adress = document.getElementById('adress');
 // Onblur: Validar si el valor tiene letras, números y un espacio en el medio y si tiene mas de 5 caracteres.
     adress.addEventListener('blur', validateAdress);
-    var adressErr = ['You have not completed your name'];
+    var adressErr = ['Adress Error! It has not been completed.'];
+    var adressCheck = [];
     function validateAdress() {
         adressErr = [];
+        adressCheck = [];
         var fitAbc = 0;
         var fitNum = 0;
         var lowerCase = adress.value.toLowerCase();
@@ -245,7 +256,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your adress, please';
             adress.classList.remove('green-border');
-            adressErr.push('You have no completed your adress');
+            adressErr.push('Adress Error! It has not been completed.');
             return false;
         };
         for (let i = 0; i < lowerCase.length; i++) {      
@@ -266,7 +277,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your adress must have at least 5 characters.';
             adress.classList.remove('green-border');
-            adressErr.push('Your adress does not reach 5 characters');
+            adressErr.push('Adress Error! It has to have at least 5 characters');
             return false;
         };
         if (fitAbc === 0) {
@@ -276,7 +287,7 @@ window.addEventListener("load", function() {
             paragraph.innerHTML = 'Your adress must have at least one letter.';
             adress.classList.remove('green-border');
             adress.classList.add('inherit-border');
-            adressErr.push('Your adress does not contain letters');
+            adressErr.push('Adress Error! It does not contain letter.');
             return false;
         } ;
         if (fitNum === 0) {
@@ -285,7 +296,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your adress must have at least one number.';
             adress.classList.remove('green-border');
-            adressErr.push('Your adress does not contain numbers');
+            adressErr.push('Adress Error! It does not contain numbers.');
             return false;
         };
         if (!adress.value.includes(' ')) {
@@ -294,11 +305,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your adress must have at least one blank.';
             adress.classList.remove('green-border');
-            adressErr.push('Your adress does not contain blanks');
+            adressErr.push('Adress Error! It does not contain blanks.');
             return false;
         };
         adress.classList.add('green-border');
-        validateMsj.push('Adress: '+adress.value);
+        adressCheck.push('Adress: '+adress.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -308,9 +319,11 @@ window.addEventListener("load", function() {
     var location = document.getElementById('location');
 // Onblur: Validar si el valor  solo tiene letras o números y si tiene mas de 3 caracteres.
     location.addEventListener('blur', validateLocation);
-    var locationErr = ['You have not completed your location'];
+    var locationErr = ['Location Error! It has not been completed.'];
+    var locationCheck = [];
     function validateLocation() {
         locationErr = [];
+        locationCheck = [];
         var acceptedCharsNums = acceptedChars+acceptedNums;
         var lowerCase = location.value.toLowerCase();
         if (location.value.length === 0) {
@@ -319,7 +332,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your location, please';
             location.classList.remove('green-border');
-            locationErr.push('You have no completed your location');
+            locationErr.push('Adress Error! It has not been completed.');
             return false;
         };
         if (location.value.length < 4) {
@@ -328,7 +341,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your location must have more than 3 characters.';
             location.classList.remove('green-border');
-            locationErr.push('Your location does not exceed 3 characters');
+            locationErr.push('Adress Error! It has to have more than 3 characters.');
             return false;
         };
         var charactersAmount = 0;
@@ -345,11 +358,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'You have used non-accepted characters.';
             location.classList.remove('green-border');
-            locationErr.push('You have used non-accepted characters in your phone number.');
+            locationErr.push('Adress Error! It contains non-accepted characters.');
             return false;
         };
         location.classList.add('green-border');
-        validateMsj.push('Location: '+location.value);
+        locationCheck.push('Location: '+location.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -359,16 +372,18 @@ window.addEventListener("load", function() {
     var cp = document.getElementById('cp');
 // Onblur: Validar si el valor solo tiene numeros y si tiene 4 o 5 caracteres
     cp.addEventListener('blur', validateCP);
-    var cpErr = ['You have not completed your Postal Code'];
+    var cpErr = ['Postal Code Error! It has not been completed.'];
+    var cpCheck = [];
     function validateCP() {
         cpErr = [];
+        cpCheck = [];
         if (cp.value.length === 0) {
             var paragraph = document.createElement('p');
             cp.parentElement.appendChild(paragraph);
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your Postal Code, please';
             cp.classList.remove('green-border');
-            cpErr.push('You have not completed your Postal Code');
+            cpErr.push('Postal Code Error! It has not been completed.');
             return false;
         };
         var charactersAmount = 0;
@@ -385,7 +400,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'You have used non-accepted characters';
             cp.classList.remove('green-border');
-            cpErr.push('You have used non-accepted characters in your Postal Code');
+            cpErr.push('Postal Code Error! It contains non-accepted characters.');
             return false;
         };
         if (cp.value.length !== 4 && cp.value.length !== 5) {
@@ -394,11 +409,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your Postal Code has to have  4 or 5 characters';
             cp.classList.remove('green-border');
-            telErr.push('Your Postal Code does not have 4 or 5 characters');
+            telErr.push('Postal Code Error! It has to have 4 or 5 characters');
             return false;
         };
         cp.classList.add('green-border');
-        validateMsj.push('CP: '+cp.value);
+        cpCheck.push('CP: '+cp.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -409,16 +424,18 @@ window.addEventListener("load", function() {
 // Onblur: Validación REGEX. Si hay un error, mostrar un mensaje.
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     email.addEventListener('blur', validateEmail);
-    var emailErr = ['You have not completed your email'];
+    var emailErr = ['Email Error! It has not been completed.'];
+    var emailCheck = [];
     function validateEmail(){
         emailErr = [];
+        emailCheck = [];
         if (email.value.length === 0) {
             var paragraph = document.createElement('p');
             email.parentElement.appendChild(paragraph);
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your email, please';
             email.classList.remove('green-border');
-            emailErr.push('You have not completed your email');
+            emailErr.push('Email Error! It has not been completed.');
             return false;
         };
         if (!emailExpression.test(email.value)) {
@@ -427,11 +444,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Wrong email';
             email.classList.remove('green-border');
-            emailErr.push('Your email is wrong');
+            emailErr.push('Email Error! It does not accomplish the requirements.');
             return false;
         };
         email.classList.add('green-border');
-        validateMsj.push('Email: '+email.value);
+        emailCheck.push('Email: '+email.value);
         return true;
     };
 
@@ -442,9 +459,11 @@ window.addEventListener("load", function() {
     var psw = document.getElementById('password');
 // Onblur: validar si el valor esta formado por letras y números y si tiene al menos 8 caracteres.
     psw.addEventListener('blur', validatePassword);
-    var pswErr = ['You have not completed your password'];
+    var pswErr = ['Password Error! It has not been completed.'];
+    var pswCheck = [];
     function validatePassword() {
         pswErr = [];
+        pswCheck = [];
         var fitAbc = 0;
         var fitNum = 0;
         var lowerCase = psw.value.toLowerCase();
@@ -454,7 +473,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Insert your password, please';
             psw.classList.remove('green-border');
-            pswErr.push('You have no completed your password');
+            pswErr.push('Password Error! It has not been completed.');
             return false;
         };
         for (let i = 0; i < lowerCase.length; i++) {
@@ -476,7 +495,7 @@ window.addEventListener("load", function() {
             paragraph.innerHTML = 'Your password must have at least one letter.';
             psw.classList.remove('green-border');
             psw.classList.add('inherit-border');
-            pswErr.push('Your password has not contains letters');
+            pswErr.push('Password Error! It has to contain letters');
             return false;
         } 
         if (fitNum === 0) {
@@ -485,7 +504,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your password must have at least one number.';
             psw.classList.remove('green-border');
-            pswErr.push('Your password has not contains numbers');
+            pswErr.push('Password Error! It has to contain numbers');
             return false;
         };
         if (psw.value.length < 9) {
@@ -494,11 +513,11 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your password must have more than 8 characters.';
             psw.classList.remove('green-border');
-            pswErr.push('Your password does not exceed 8 characters.');
+            pswErr.push('Password Error! It has to contain at least 8 characters.');
             return false;
         };
         psw.classList.add('green-border');
-        validateMsj.push('Password: '+psw.value);
+        pswCheck.push('Password: '+psw.value);
         return true;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -508,12 +527,14 @@ window.addEventListener("load", function() {
     var pswConf = document.getElementById('password-confirm');
 // Onblur: validar si la el value es igual al valor de contraseña
     pswConf.addEventListener('blur', validatePswConf);
-    var pswConfErr = ['You have noy completed your password to confirm it.'];
+    var pswConfErr = ['Password Confirmation Error! It has not been completed.'];
+    var pswConfCheck = [];
     function validatePswConf() {
         pswConfErr = [];
+        pswConfCheck = [];
         if (psw.value === pswConf.value) {
             pswConf.classList.add('green-border');
-            validateMsj.push('Confirmed password: '+pswConf.value);
+            pswConfCheck.push('Confirmed password: '+pswConf.value);
             return true;
         };
         if (pswConf.value.length === 0) {
@@ -522,7 +543,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Repeat your password, please.';
             pswConf.classList.remove('green-border');
-            pswConfErr.push('You have not completed your password to confirm it.');
+            pswConfErr.push('Password Confirmation Error! It has not been completed.');
             return false;
         };
         var paragraph = document.createElement('p');
@@ -530,7 +551,7 @@ window.addEventListener("load", function() {
         paragraph.classList.add('wrong');
         paragraph.innerHTML = 'Your passwords do not match.';
         pswConf.classList.remove('green-border');
-        pswConfErr.push('Your passwords do not match.');
+        pswConfErr.push('Password Confirmation Error! Passwords do not match.');
         return false;
     };
 // Onfocus: Desaparecer mensaje de validación .
@@ -547,7 +568,8 @@ window.addEventListener("load", function() {
             alert(validateMsjError.join('\n'));
             return;
         };
-        alert(validateMsj.join('\n'));
+        var validateMsjCheck = nameCheck.concat(lastnameCheck,dniCheck,birthDateCheck,telCheck,adressCheck,locationCheck,cpCheck,emailCheck,pswCheck,pswConfCheck);
+        alert(validateMsjCheck.join('\n'));
         return;
     };
 });
