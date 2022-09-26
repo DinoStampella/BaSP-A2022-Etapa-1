@@ -409,7 +409,7 @@ window.addEventListener("load", function() {
             paragraph.classList.add('wrong');
             paragraph.innerHTML = 'Your Postal Code has to have  4 or 5 characters';
             cp.classList.remove('green-border');
-            telErr.push('Postal Code Error! It has to have 4 or 5 characters');
+            cpErr.push('Postal Code Error! It has to have 4 or 5 characters');
             return false;
         };
         cp.classList.add('green-border');
