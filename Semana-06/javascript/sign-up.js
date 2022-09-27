@@ -563,6 +563,14 @@ window.addEventListener("load", function() {
     signUpBtn.addEventListener('click', validateSignUp);
     function validateSignUp(e) {
         e.preventDefault();
+        if (psw.value !== pswConf.value && pswConf.classList.contains('green-border')) {
+            var paragraph = document.createElement('p');
+            pswConf.parentElement.appendChild(paragraph);
+            paragraph.classList.add('wrong');
+            paragraph.innerHTML = 'Your passwords do not match.';
+            pswConf.classList.remove('green-border');
+            pswConfErr.push('Password Confirmation Error! Passwords do not match.');
+        }
         var validateMsjError = nameErr.concat(lastnameErr,dniErr,birthDateErr,telErr,adressErr,locationErr,cpErr,emailErr,pswErr,pswConfErr);
         if (validateMsjError.length !== 0) {
             alert(validateMsjError.join('\n'));
