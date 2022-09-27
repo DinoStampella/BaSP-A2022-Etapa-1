@@ -45,7 +45,7 @@ window.addEventListener('load', function() {
         };
         if (name.value.length !== charactersAmount) {
             validateInputError(name,'You have used non-accepted characters');
-            nameErr['Name Error! It contains non-accepted characters'];
+            nameErr = ['Name Error! It contains non-accepted characters'];
             return;
         };
         name.classList.add('green-border');
