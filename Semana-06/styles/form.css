@@ -50,6 +50,17 @@ textarea {
     color: #FFFFFF;
 }
 
+.wrong{
+    width: 90%;
+    margin: -25px 0 10px 12px;
+    color: #F13312;
+    font-weight: 500;
+}
+
+.green-border {
+    border-color: #008000 !important;
+}
+
 @media (min-width: 834px) {
 
     #form form {

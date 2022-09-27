@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../styles/final-section.css">
         <link rel="stylesheet" href="../styles/sidebar.css">
         <link rel="stylesheet" href="../styles/footer.css">
+        <script src="../javascript/contact.js"></script>
         <title>Trackgenix</title>
     </head>
     <body>
@@ -117,10 +118,10 @@
                     Ask for more information:
                 </h2>
                 <form action="">
-                    <input type="text" placeholder="Name" class="form-children form-first-children">
-                    <input type="text" placeholder="Email" class="form-children form-first-children">
-                    <select name="" id="" class="form-children form-first-children">
-                        <option value="">
+                    <input type="text" placeholder="Name" class="form-children form-first-children" id="form-name">
+                    <input type="text" placeholder="Email" class="form-children form-first-children" id="form-email">
+                    <select name="" class="form-children form-first-children" id="contact-area"> 
+                        <option value="Non-select">
                             -Category-
                         </option>
                         <option value="RRHH">
@@ -129,11 +130,11 @@
                         <option value="Sistemas">
                             Systems
                         </option>
-                        <option value="Comercialización">
+                        <option value="Comercializacion">
                             Commercialization
                         </option>
                     </select>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Message"  class="form-children"></textarea>
+                    <textarea name="" cols="30" rows="10" placeholder="Message"  class="form-children" id="form-txt"></textarea>
                     <div class="form-children">
                         <input type="reset" value="Cancel" class="form-btn form-btn-cancel">
                         <input type="submit" value="Send" class="form-btn form-btn-submit">
