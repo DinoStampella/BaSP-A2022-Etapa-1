@@ -578,6 +578,18 @@ window.addEventListener("load", function() {
         };
         var validateMsjCheck = nameCheck.concat(lastnameCheck,dniCheck,birthDateCheck,telCheck,adressCheck,locationCheck,cpCheck,emailCheck,pswCheck,pswConfCheck);
         alert(validateMsjCheck.join('\n'));
+        document.getElementById('form-sign-up').reset();
+        var inputs = document.querySelectorAll('#form-sign-up input')
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].classList.remove('green-border');
+        }
+        var paragraph = document.createElement('p');
+            signUpBtn.parentElement.appendChild(paragraph);
+            paragraph.classList.add('submited')
+            paragraph.innerHTML = 'Submited';
+        setTimeout(function formSubmited() {
+            signUpBtn.parentElement.removeChild(paragraph);
+        },1000)
         return;
     };
 });

@@ -89,6 +89,7 @@ window.addEventListener('load', function() {
     var contactAreaCheck = [];
     function validateContactArea() {
         contactAreaErr = [];
+        contactAreaCheck = [];
         if (contactArea.value === 'Non-select') {
             validateInputError(contactArea,'');
             contactAreaErr = ['Contact area Error! No option has been chosen.'];
@@ -128,6 +129,7 @@ window.addEventListener('load', function() {
 //     -Boton "Send"
     var sendBtn = document.querySelector('.form-btn-submit');
 // Onclick: validar formulario y alertar la info.
+    var inputs = [name,email,contactArea,textarea];
     sendBtn.addEventListener('click', validateForm);
     function validateForm(e) {
         e.preventDefault();
@@ -138,6 +140,17 @@ window.addEventListener('load', function() {
         };
         var validateMsjCheck = nameCheck.concat(emailCheck,contactAreaCheck,textareaCheck);
         alert(validateMsjCheck.join('\n'));
+        document.getElementById('form-contact').reset();
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].classList.remove('green-border');
+        }
+        var paragraph = document.createElement('p');
+        sendBtn.parentElement.appendChild(paragraph);
+        paragraph.classList.add('submited');
+        paragraph.innerHTML = 'Submited';
+        setTimeout(function formSubmited() {
+            sendBtn.parentElement.removeChild(paragraph);
+        },2000)
         return;
     };
 
@@ -146,7 +159,6 @@ window.addEventListener('load', function() {
 // Onclick: reiniciar formulario, quitarle el color verde a los bordes
     cancelBtn.addEventListener('click', removeMessages);
         function removeMessages() {
-            var inputs = [name,email,contactArea,textarea];
             for (let i = 0; i < inputs.length; i++) {
                 var clicked = inputs[i];
                 if (clicked.nextElementSibling.classList.contains('wrong')) {

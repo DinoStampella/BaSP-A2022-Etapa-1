@@ -105,6 +105,14 @@
     border-color: #008000 !important;
 }
 
+.submited {
+    margin-top: 20px;
+    color: #008000;
+    font-weight: 600;
+    font-size: 1.7rem !important;
+    line-height: 2rem !important;
+}
+
 @media (min-width: 834px) {
 
     .flex {

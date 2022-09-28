@@ -121,6 +121,18 @@ window.addEventListener("load", function() {
         };
         var validateMsjCheck = emailCheck.concat(pswCheck);
         alert(validateMsjCheck.join('\n'));
+        document.getElementById('form-login').reset();
+        var inputs = document.querySelectorAll('#form-login input')
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].classList.remove('green-border');
+        }
+        var paragraph = document.createElement('p');
+            logBtn.parentElement.appendChild(paragraph);
+            paragraph.classList.add('submited')
+            paragraph.innerHTML = 'Submited';
+        setTimeout(function formSubmited() {
+            logBtn.parentElement.removeChild(paragraph);
+        },1000)
         return;
     };
 });
