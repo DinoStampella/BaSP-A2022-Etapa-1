@@ -1,0 +1,48 @@
+footer {
+    margin-top: 15px;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+}
+
+footer img {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    filter: invert(41%) sepia(0%) saturate(0%) hue-rotate(155deg) brightness(98%) contrast(92%)
+}
+
+footer > div {
+    padding: 7px 0;
+}
+
+footer p {
+    font-size: .75rem;
+    line-height: .875rem;
+}
+
+@media (min-width: 834px) {
+
+    footer {
+        margin-top: 56px;
+    }
+
+    footer img {
+        width: 30px;
+        height: 30px;
+        margin: 0 7px;
+    }
+
+    footer > div {
+        padding: 40px 0;
+    }
+
+    footer p {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+    }
+}
+

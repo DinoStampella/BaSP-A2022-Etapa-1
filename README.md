@@ -24,6 +24,7 @@ Open the index.html file or install the Live Server extension in VSC.
 |    04    	| Replicate the landing page of the screenflow of the first week using Flexbox as the main tool for the creation of a Responsive Design following the Mobile First concept. 	|
 |    05    	| Improve what was delivered in the previous week and do JavaScript exercises. 	|
 |    06    	| Create Trackgenix sign up and login screens. 	|
+|    07    	| Extend Login and Sign Up forms so that pressing the confirmation buttons sends the data loaded in them to a web server through an HTTP request from JavaScript 	|
 
 ## How to contribute
 1. **Fork** the repo on GitHub
@@ -33,7 +34,7 @@ Open the index.html file or install the Live Server extension in VSC.
 5. Submit a **Pull request** so that we can review your changes
 
 ## Website Link
-https://dinostampella.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html
+https://dinostampella.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html
 
 
 ## Work team

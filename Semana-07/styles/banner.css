@@ -1,0 +1,107 @@
+
+#banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 5px;
+    font-weight: 700;
+    font-size: 2.5rem; 
+    line-height: 2.93rem; 
+    text-transform: uppercase;
+}
+
+#banner h2 {
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 1rem;
+    color: #AACE9B;
+}
+
+#banner img {
+    width: 39.74vw;
+    margin: 5px 0;
+}
+
+#banner p {
+    width: 80%;
+}
+
+#banner button {
+    display: none;
+    width: 166px;
+    height: 72px;
+    margin-top: 36px;
+    background-color: white;
+    border: 3px solid #AACE9B;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: #AACE9B;
+}
+
+@media (min-width: 834px) {
+
+    h1 {
+        padding-top: 10px;
+        font-size: 4.5rem; 
+        line-height: 4.981rem; 
+    }
+
+    #banner h2 {
+        margin-top: 18px;
+        font-size: 1.313rem;
+        line-height: 1.563rem;
+    }
+
+    #banner img {
+        width: 23.5vw;
+        margin: 13px 0;
+    }
+}
+
+@media (min-width: 1512px) {
+
+    #banner {
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 550px;
+        padding-top: 28px;
+    }
+
+    h1 {
+        font-size: 3rem; 
+        line-height: 3.516rem;
+        letter-spacing: 0.3em;
+    }
+
+    #banner h2 {
+        margin: 36px 0;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        text-transform: uppercase;
+    }
+
+    #banner img {
+        order: 2;
+        width: 30.29vw;
+        margin: 0;
+    }
+
+    #banner button {
+        display: block;
+        align-self: flex-start;
+    }
+
+    h1, #banner h2, #banner p {
+        text-align: start;
+        width: 55%;
+    }
+}

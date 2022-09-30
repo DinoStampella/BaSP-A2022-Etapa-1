@@ -1,0 +1,15 @@
+#sign-up {
+    max-width: 820px;
+}
+
+#sign-up form > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#sign-up form > div > div {
+    width: 100%;
+    max-width: 246.6px;
+    margin: auto 10px;
+}
