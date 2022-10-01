@@ -1,30 +1,33 @@
 window.addEventListener("load", function() {
+// REUSABLE
+    function validateInput(input, txt) {
+        var paragraph = document.createElement('p');
+        input.parentElement.appendChild(paragraph);
+        paragraph.classList.add('wrong');
+        paragraph.innerHTML = txt;
+        input.classList.remove('green-border');
+    };
+    function removeMessage(e) {
+        var clicked = e.target;
+        if (clicked.nextElementSibling) {
+            clicked.parentElement.removeChild(clicked.nextElementSibling);
+        };
+    };
+
 //     -Email:
     var email = document.getElementById('email');
-// Onblur: validacion REGEX, si hay un error mostrar un mensaje.
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-    email.addEventListener('blur', validateEmail);
     var emailErr = ['Email Error! It has not been completed.'];
-    var emailCheck = [];
     function validateEmail(){
         emailErr = [];
         emailCheck = [];
         if (email.value.length === 0) {
-            var paragraph = document.createElement('p');
-            email.parentElement.appendChild(paragraph);
-            paragraph.classList.add('wrong');
-            paragraph.innerHTML = 'Insert your email, please';
-            email.classList.remove('green-border');
+            validateInput(email,'Insert your email, please');
             emailErr.push('Email Error! It has not been completed.');
             return false;
         };
         if (!emailExpression.test(email.value)) {
-            var paragraph = document.createElement('p');
-            email.parentElement.appendChild(paragraph);
-            paragraph.classList.add('wrong');
-            paragraph.innerHTML = 'Wrong email';
-            email.classList.remove('green-border');
-            console.log('Email: ' + email.value);
+            validateInput(email,'Wrong email');
             emailErr.push('Email Error! It does not accomplish the requirements.');
             return false;
         };
@@ -32,22 +35,12 @@ window.addEventListener("load", function() {
         emailCheck.push('Email: ' + email.value);
         return true;
     };
-
-// Onfocus: desaparecer mensaje en caso de que haya uno.
+    email.addEventListener('blur', validateEmail);
     email.addEventListener('focus', removeMessage);
-    function removeMessage(e) {
-        var clicked = e.target;
-        if (clicked.nextElementSibling) {
-            clicked.parentElement.removeChild(clicked.nextElementSibling);
-        }; 
-    };
 
 //     -Password:
-    var psw = document.getElementById('password');
-// Onblur: Validar si el valor contiene números y  letras. Si hay un error, mostrar un mensaje.    
-    psw.addEventListener('blur', validatePassword);
+    var psw = document.getElementById('password');  
     var pswErr = ['Password Error! It has not been completed.'];
-    var pswCheck = [];
     var abc = 'abcdefghijklmnñopqrstuvwqyz';
     var num = '0123456789';
     function validatePassword() {
@@ -57,11 +50,7 @@ window.addEventListener("load", function() {
         var fitNum = 0;
         var lowerCase = psw.value.toLowerCase();
         if (psw.value.length === 0) {
-            var paragraph = document.createElement('p');
-            psw.parentElement.appendChild(paragraph);
-            paragraph.classList.add('wrong');
-            paragraph.innerHTML = 'Insert your password, please';
-            psw.classList.remove('green-border');
+            validateInput(psw,'Insert your password, please')
             pswErr.push('Password Error! It has not been completed.');
             return false;
         };
@@ -78,40 +67,29 @@ window.addEventListener("load", function() {
             };
         };
         if (fitAbc === 0) {
-            var paragraph = document.createElement('p');
-            psw.parentElement.appendChild(paragraph);
-            paragraph.classList.add('wrong');
-            paragraph.innerHTML = 'Your password must have at least one letter.';
-            psw.classList.remove('green-border');
-            psw.classList.add('inherit-border');
+            validateInput(psw,'Your password must have at least one letter.')
             pswErr.push('Password Error! It has to contain letters.');
             return false;
         } ;
         if (fitNum === 0) {
-            var paragraph = document.createElement('p');
-            psw.parentElement.appendChild(paragraph);
-            paragraph.classList.add('wrong');
-            paragraph.innerHTML = 'Your password must have at least one number.';
-            psw.classList.remove('green-border');
-            console.log('Password: ' + psw.value);
+            validateInput(psw,'Your password must have at least one number.')
             pswErr.push('Password Error! It has to contain numbers.');
             return false;
         };
-        if (lowerCase.length) {
-            
+        if (lowerCase.length !== fitAbc+fitNum) {
+            validateInput(psw,'Your password has non-accepted characters (It accepts only letter and numbers).')
+            pswErr.push('Password Error!  It contains non-accepted characters.');
+            return false;
         }
         psw.classList.add('green-border');
         pswCheck.push('Password: ' + psw.value);
         return true;
     };
-
-// Onfocus: Desaparecer mensaje de validación .
+    psw.addEventListener('blur', validatePassword);
     psw.addEventListener('focus', removeMessage);
 
 //     -Login:
     var logBtn = document.getElementById('login-button');
-// Onsubmit: Validar si email  contraseña son correctos y alertarlo. En caso de haber errores, mostrarlos en la alerta.
-    logBtn.addEventListener('click', validateLogin);
     function validateLogin(e) {
         e.preventDefault();
         var validateMsjError = emailErr.concat(pswErr);
@@ -121,7 +99,6 @@ window.addEventListener("load", function() {
         };
         var validateMsjCheck = emailCheck.concat(pswCheck);
         alert(validateMsjCheck.join('\n'));
-        document.getElementById('form-login').reset();
         var inputs = document.querySelectorAll('#form-login input')
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].classList.remove('green-border');
@@ -133,6 +110,7 @@ window.addEventListener("load", function() {
         setTimeout(function formSubmited() {
             logBtn.parentElement.removeChild(paragraph);
         },1000)
-        return;
+        document.getElementById('form-login').reset();
     };
+    logBtn.addEventListener('click', validateLogin);
 });
