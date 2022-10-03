@@ -475,7 +475,10 @@ window.addEventListener("load", function() {
         }
         var validateMsjError = nameErr.concat(lastnameErr,dniErr,birthDateErr,telErr,adressErr,locationErr,cpErr,emailErr,pswErr,pswConfErr);
         if (validateMsjError.length !== 0) {
-            alert(validateMsjError.join('\n'));
+            document.querySelector('#modal-sign-up p').innerHTML = validateMsjError.join('</br>');
+            modal.classList.add('modal-show');
+            document.querySelector('.modal-header').classList.add('error-background');
+            // alert(validateMsjError.join('\n'));
             return;
         };
         //        First validation passed:
@@ -499,14 +502,9 @@ window.addEventListener("load", function() {
                 return response
             })
             .then(function(response){
-                alert(response.msg)
-                var paragraph = document.createElement('p');
-                signUpBtn.parentElement.appendChild(paragraph);
-                paragraph.classList.add('submited');
-                paragraph.innerHTML = 'Submited';
-                setTimeout(function formSubmited() {
-                    signUpBtn.parentElement.removeChild(paragraph);
-                },1000);
+                document.querySelector('#modal-sign-up p').innerHTML = response.msg;
+                modal.classList.add('modal-show');
+                // alert(response.msg)
                 return response
             })
             .then(function(response){
@@ -526,7 +524,10 @@ window.addEventListener("load", function() {
                 for (var i = 0; i < error.errors.length; i++) {
                     errorMsg[i] = error.errors[i].msg; 
                 };
-                alert('Error:\n'+errorMsg.join('\n'));
+                document.querySelector('#modal-sign-up p').innerHTML = errorMsg.join('</br>');
+                modal.classList.add('modal-show');
+                document.querySelector('.modal-header').classList.add('error-background');
+                // alert('Error:\n'+errorMsg.join('\n'));
             })
         
         var inputs = document.querySelectorAll('#form-sign-up input')
@@ -536,4 +537,18 @@ window.addEventListener("load", function() {
         return;
     };
     signUpBtn.addEventListener('click', validateSignUp);
+
+    // MODAL
+    var modal = document.getElementById("modal-sign-up");
+    var modalClose = document.getElementsByClassName("modal-close")[0];
+    modalClose.onclick = function() {
+        modal.classList.remove('modal-show');
+        document.querySelector('.modal-header').classList.remove('error-background');
+    };
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.remove('modal-show');
+        document.querySelector('.modal-header').classList.remove('error-background');
+        };
+    };
 });
