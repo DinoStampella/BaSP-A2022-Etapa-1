@@ -17,6 +17,11 @@ window.addEventListener("load", function() {
 //     -Name: 
     var name = document.getElementById('name');
     var nameErr = ['Name Error! It has not been completed.'];
+    var nameCheck = [localStorage.getItem('name')];
+    if (localStorage.getItem('name') !== null) {
+        name.setAttribute('value', localStorage.getItem('name'));
+        nameErr = [];
+    };
     var acceptedChars = 'abcdefghijklmnñopqrstuvwxyz ';
     var acceptedNums = '0123456789';
     function validateName() {
@@ -56,6 +61,11 @@ window.addEventListener("load", function() {
 //     -Lastname:
     var lastname = document.getElementById('lastname');
     var lastnameErr = ['Lastname Error! It has not been completed.'];
+    var lastnameCheck = [localStorage.getItem('lastName')];
+    if (localStorage.getItem('lastName') !== null) {
+        lastname.setAttribute('value', localStorage.getItem('lastName'));
+        lastnameErr = [];
+    };
     function validateLastname() {
         lastnameErr = [];
         lastnameCheck = [];
@@ -94,6 +104,11 @@ window.addEventListener("load", function() {
 //     -DNI:
     var dni = document.getElementById('dni');
     var dniErr = ['DNI Error! It has not been completed.'];
+    var dniCheck = [localStorage.getItem('dni')];
+    if (localStorage.getItem('dni') !== null) {
+        dni.setAttribute('value', localStorage.getItem('dni'));
+        dniErr = [];
+    };
     function validateDNI() {
         dniErr = [];
         dniCheck = [];
@@ -130,6 +145,16 @@ window.addEventListener("load", function() {
 //     -Fecha de Nacimiento:
     var birthDate = document.getElementById('birth-date');
     var birthDateErr = ['Birth Date Error! It has not been completed.'];
+    var birthDateCheck = [localStorage.getItem('dob')];
+    if (localStorage.getItem('dob') !== null) {
+        var localStorgeDob = localStorage.getItem('dob');
+        var year = localStorgeDob.substring(6,10);
+        var month = localStorgeDob.substring(0,2);
+        var day = localStorgeDob.substring(3,5)
+        var valueBod = year+'-'+month+'-'+day;
+        birthDate.setAttribute('value', valueBod);
+        birthDateErr = [];
+    };
     function validateBirthDate() {
         birthDateErr = [];
         birthDateCheck = [];
@@ -149,6 +174,11 @@ window.addEventListener("load", function() {
 //     -Telephone number:
     var tel = document.getElementById('tel');
     var telErr = ['Phone number Error! It has not been completed.'];
+    var telCheck = [localStorage.getItem('phone')];
+    if (localStorage.getItem('phone') !== null) {
+        tel.setAttribute('value', localStorage.getItem('phone'));
+        telErr = [];
+    };
     function validateTel() {
         telErr = []; 
         telCheck = [];
@@ -185,6 +215,11 @@ window.addEventListener("load", function() {
 //     -Adress:
     var adress = document.getElementById('adress');
     var adressErr = ['Adress Error! It has not been completed.'];
+    var adressCheck = [localStorage.getItem('address')];
+    if (localStorage.getItem('address') !== null) {
+        adress.setAttribute('value', localStorage.getItem('address'));
+        adressErr = [];
+    };
     function validateAdress() {
         adressErr = [];
         adressCheck = [];
@@ -238,6 +273,11 @@ window.addEventListener("load", function() {
 //     -City:
     var location = document.getElementById('location');
     var locationErr = ['Location Error! It has not been completed.'];
+    var locationCheck = [localStorage.getItem('city')];
+    if (localStorage.getItem('city') !== null) {
+        location.setAttribute('value', localStorage.getItem('city'));
+        locationErr = [];
+    };
     function validateLocation() {
         locationErr = [];
         locationCheck = [];
@@ -276,6 +316,11 @@ window.addEventListener("load", function() {
 //      -Postal Code:
     var cp = document.getElementById('cp');
     var cpErr = ['Postal Code Error! It has not been completed.'];
+    var cpCheck = [localStorage.getItem('zip')];
+    if (localStorage.getItem('zip') !== null) {
+        cp.setAttribute('value', localStorage.getItem('zip'));
+        cpErr = [];
+    };
     function validateCP() {
         cpErr = [];
         cpCheck = [];
@@ -311,8 +356,13 @@ window.addEventListener("load", function() {
 
 //     -Email:
     var email = document.getElementById('email');
-    var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var emailErr = ['Email Error! It has not been completed.'];
+    var emailCheck = [localStorage.getItem('email')];
+    if (localStorage.getItem('email') !== null) {
+        email.setAttribute('value', localStorage.getItem('email'));
+        emailErr = [];
+    };
+    var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     function validateEmail(){
         emailErr = [];
         emailCheck = [];
@@ -337,6 +387,11 @@ window.addEventListener("load", function() {
 //     -Password:
     var psw = document.getElementById('password');
     var pswErr = ['Password Error! It has not been completed.'];
+    var pswCheck = [localStorage.getItem('password')];
+    if (localStorage.getItem('password') !== null) {
+        psw.setAttribute('value', localStorage.getItem('password'));
+        pswErr = [];
+    };
     function validatePassword() {
         pswErr = [];
         pswCheck = [];
@@ -385,6 +440,11 @@ window.addEventListener("load", function() {
 //     -Confirm password:
     var pswConf = document.getElementById('password-confirm');
     var pswConfErr = ['Password Confirmation Error! It has not been completed.'];
+    var pswConfCheck = [localStorage.getItem('password')];
+    if (localStorage.getItem('password') !== null) {
+        pswConf.setAttribute('value', localStorage.getItem('password'));
+        pswConfErr = [];
+    };
     function validatePswConf() {
         pswConfErr = [];
         pswConfCheck = [];
@@ -418,20 +478,61 @@ window.addEventListener("load", function() {
             alert(validateMsjError.join('\n'));
             return;
         };
-        var validateMsjCheck = nameCheck.concat(lastnameCheck,dniCheck,birthDateCheck,telCheck,adressCheck,locationCheck,cpCheck,emailCheck,pswCheck,pswConfCheck);
-        alert(validateMsjCheck.join('\n'));
+        //        First validation passed:
+        // var validateMsjCheck = nameCheck.concat(lastnameCheck,dniCheck,birthDateCheck,telCheck,adressCheck,locationCheck,cpCheck,emailCheck,pswCheck,pswConfCheck);
+        // alert(validateMsjCheck.join('\n'));
+
+        var year = birthDate.value.substring(0, 4);
+        var month = birthDate.value.substring(5, 7);
+        var day = birthDate.value.substring(8, 10);
+        var dob = month+'/'+day+'/'+year;
+        var path = 'name='+name.value+'&lastName='+lastname.value+'&dni='+dni.value+'&dob='+dob+'&phone='+tel.value+
+            '&address='+adress.value+'&city='+location.value+'&zip='+cp.value+'&email='+email.value+'&password='+psw.value;
+        fetch('https://basp-m2022-api-rest-server.herokuapp.com/signup?'+path)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(response){
+                if (response.success === false) {
+                    throw response;
+                }
+                return response
+            })
+            .then(function(response){
+                alert(response.msg)
+                var paragraph = document.createElement('p');
+                signUpBtn.parentElement.appendChild(paragraph);
+                paragraph.classList.add('submited');
+                paragraph.innerHTML = 'Submited';
+                setTimeout(function formSubmited() {
+                    signUpBtn.parentElement.removeChild(paragraph);
+                },1000);
+                return response
+            })
+            .then(function(response){
+                localStorage.setItem('name',response.data.name);
+                localStorage.setItem('lastName',response.data.lastName);
+                localStorage.setItem('dni',response.data.dni);
+                localStorage.setItem('dob',response.data.dob);
+                localStorage.setItem('phone',response.data.phone);
+                localStorage.setItem('address',response.data.address);
+                localStorage.setItem('city',response.data.city);
+                localStorage.setItem('zip',response.data.zip);
+                localStorage.setItem('email',response.data.email);
+                localStorage.setItem('password',response.data.password);
+            })
+            .catch(function(error){
+                var errorMsg = [];
+                for (var i = 0; i < error.errors.length; i++) {
+                    errorMsg[i] = error.errors[i].msg; 
+                };
+                alert('Error:\n'+errorMsg.join('\n'));
+            })
+        
         var inputs = document.querySelectorAll('#form-sign-up input')
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].classList.remove('green-border');
         }
-        var paragraph = document.createElement('p');
-        signUpBtn.parentElement.appendChild(paragraph);
-        paragraph.classList.add('submited')
-        paragraph.innerHTML = 'Submited';
-        setTimeout(function formSubmited() {
-            signUpBtn.parentElement.removeChild(paragraph);
-        },1000)
-        document.getElementById('form-sign-up').reset();
         return;
     };
     signUpBtn.addEventListener('click', validateSignUp);

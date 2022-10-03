@@ -97,19 +97,38 @@ window.addEventListener("load", function() {
             alert(validateMsjError.join('\n'));
             return;
         };
-        var validateMsjCheck = emailCheck.concat(pswCheck);
-        alert(validateMsjCheck.join('\n'));
+        //        First validation passed:
+        // var validateMsjCheck = emailCheck.concat(pswCheck);
+        // alert(validateMsjCheck.join('\n'));
+
+        fetch('https://basp-m2022-api-rest-server.herokuapp.com/login?email='+email.value+'&password='+psw.value)
+            .then(function(response){
+                return response.json();
+            })
+            .then(function(response){
+                if (response.success === false) {
+                    throw response;
+                }
+                return response;
+            })
+            .then(function(respose){
+                alert(respose.msg);
+                var paragraph = document.createElement('p');
+                logBtn.parentElement.appendChild(paragraph);
+                paragraph.classList.add('submited');
+                paragraph.innerHTML = 'Submited';
+                setTimeout(function formSubmited() {
+                    logBtn.parentElement.removeChild(paragraph);
+                },1000); 
+            })
+            .catch(function(error){
+                alert(error.msg);
+            })
+
         var inputs = document.querySelectorAll('#form-login input')
         for (let i = 0; i < inputs.length; i++) {
             inputs[i].classList.remove('green-border');
         }
-        var paragraph = document.createElement('p');
-            logBtn.parentElement.appendChild(paragraph);
-            paragraph.classList.add('submited')
-            paragraph.innerHTML = 'Submited';
-        setTimeout(function formSubmited() {
-            logBtn.parentElement.removeChild(paragraph);
-        },1000)
         document.getElementById('form-login').reset();
     };
     logBtn.addEventListener('click', validateLogin);
